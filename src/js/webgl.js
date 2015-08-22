@@ -12,7 +12,7 @@ var Webgl = (function() {
 
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(width, height);
-        this.renderer.setClearColor(0x2D2D2D);
+        this.renderer.setClearColor(0xecf0f1);
 
 
         this.spheres = [];
@@ -21,7 +21,7 @@ var Webgl = (function() {
 
         this.interval = setInterval(function(){
 
-            self.spheres[self.spheresNb] = new Sphere();
+            self.spheres[self.spheresNb] = new Sphere(0x3facc8);
             self.spheres[self.spheresNb].position.set(
                 getRandomArbitrary(-300, 300), 
                 getRandomArbitrary(-300, 300), 
@@ -29,22 +29,15 @@ var Webgl = (function() {
 
             self.scene.add(self.spheres[self.spheresNb]);
 
-            
-
             self.spheresNb++;
 
             self.render();
 
             if(self.spheresNb >= self.spheresLimit) {
                 clearInterval(self.interval);
-                console.log('clear');
             }
-        }, 1000);
-        
-
-
+        }, 100);
     };
-
 
 
     Webgl.prototype.resize = function(width, height) {
@@ -62,16 +55,11 @@ var Webgl = (function() {
 
     };
 
-
     return Webgl;
 
 })();
 
-
-
 // Generics functions
-
-
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 };

@@ -2,15 +2,12 @@ var Sphere = (function(){
 
     var ani = 0;
 
-    function Sphere(){
+    function Sphere(color){
         THREE.Object3D.call(this);
 
         var sphereGeometry = new THREE.SphereGeometry(0);
-        var material = new THREE.MeshBasicMaterial({color: 0x3facc8, wireframe: true});
-
-        
         var sphereMaterialDashed = new THREE.LineDashedMaterial({
-            color: 0x833ea0,
+            color: color,
             dashSize: 1,
             scale: 1,
             gapSize: 1.5,
@@ -27,20 +24,21 @@ var Sphere = (function(){
     Sphere.prototype.constructor = Sphere;
 
     Sphere.prototype.update = function() {
+		var audioData = audio.getAudioData();
+
         var randomScaleValue = getRandomArbitrary(-0.1,0.1);
         var randomPositionValue = getRandomArbitrary(-1,1);
-        console.log(this);
-        this.mesh.rotation.x += 0.01;
-        this.mesh.rotation.y += 0.01;
-        this.mesh.rotation.z += 0.01;
+        this.mesh.rotation.x += audioData[1]/100;
+        this.mesh.rotation.y += audioData[1]/100;
+        this.mesh.rotation.z += audioData[1]/100;
 
         this.mesh.position.x += randomPositionValue;
         this.mesh.position.y += randomPositionValue;
         this.mesh.position.z += randomPositionValue;
 
-        this.mesh.scale.x    += randomScaleValue;
-        this.mesh.scale.y    += randomScaleValue;
-        this.mesh.scale.z    += randomScaleValue;
+        this.mesh.scale.x  = audioData[1]/100 ;
+        this.mesh.scale.y  = audioData[1]/100 ;
+        this.mesh.scale.z  = audioData[1]/100 ;
 
 
         if ((ani < 1) && (ani > 0)) {
