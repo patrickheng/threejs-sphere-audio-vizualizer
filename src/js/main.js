@@ -10,8 +10,8 @@ function init() {
 	audio = new Audio();
     document.getElementById('webgl').appendChild(webgl.renderer.domElement);
 
-    gui = new dat.GUI();
-    gui.close();
+    //gui = new dat.GUI();
+    //gui.close();
 
   	window.addEventListener('resize', resizeHandler, true);
 

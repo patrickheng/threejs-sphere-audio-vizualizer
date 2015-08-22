@@ -5,3 +5,4 @@ build
 node_modules
 assets/lib
 .idea
+src/audio/audio.mp3

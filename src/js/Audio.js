@@ -34,7 +34,6 @@ var Audio = (function() {
 
 		// Split array into 3
 		var frequencyArray = this.splitFrenquencyArray(this.frequencyData, SEP_VALUE);
-		console.log(frequencyArray);
 		// Make average of frenquency array entries
 		for(var i = 0; i < frequencyArray.length; i++) {
 			var average = 0;
@@ -44,7 +43,6 @@ var Audio = (function() {
 			}
 			this.audioData[i] = average/frequencyArray[i].length;
 		}
-		console.log(this.audioData);
 		return this.audioData;
 	}
 

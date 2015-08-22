@@ -5,3 +5,20 @@ body, html {
     padding: 0;
     overflow: hidden;
 }
+
+.mention {
+    color : white;
+    position : absolute;
+    bottom : 10px;
+    right : 25px;
+    font-size : 0.8em;
+}
+a {
+    color : #2ecc71;
+    text-decoration : none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #1abc9c;
+}
