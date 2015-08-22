@@ -1,0 +1,18 @@
+{
+  "name": "three-js-experiment",
+  "version": "0.0.1",
+  "description": "First try with three js. Shapes are generated and pulse to the beat an audio loop",
+  "author" : "Patrick Heng <hengpatrikc.pro@gmail.com> http://hengpatrick.fr",
+  "main": "src/js/main.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.4.0",
+    "gulp-concat": "~2.4.1",
+    "gulp-sourcemaps": "^1.2.4",
+    "gulp-uglify": "~1.0.1",
+    "gulp-watch": "^1.1.0"
+  },
+  "author": "Guillaume Gouessan",
+  "license": "BSD-2-Clause"
+}
