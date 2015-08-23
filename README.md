@@ -8,6 +8,7 @@ Demo available [here](http://demo.hengpatrick.fr/threejs/threejs-audio-experimen
 
 * ThreeJs
 * Web Audio Api
+* DatGUI
 * Bower
 
 
