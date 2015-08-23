@@ -8,7 +8,7 @@ var Webgl = (function() {
         this.scene = new THREE.Scene();
 
         this.camera = new THREE.PerspectiveCamera(50, width / height, 1, 10000);
-        this.camera.position.z = 500;
+        this.camera.position.z = 800;
 
         this.camera.lookAt(this.scene.position);
 
@@ -20,7 +20,7 @@ var Webgl = (function() {
 
         this.spheres = [];
         this.spheresNb = 0;
-        this.spheresLimit = 50;
+        this.spheresLimit = 60;
 
 		var audioCategories = ['bass','medium','treble']
 
@@ -29,9 +29,9 @@ var Webgl = (function() {
 
             self.spheres[self.spheresNb] = new Sphere(randomType);
             self.spheres[self.spheresNb].position.set(
-                getRandomArbitrary(-300, 300), 
-                getRandomArbitrary(-300, 300), 
-                getRandomArbitrary(-300, 300));
+                getRandomArbitrary(-400, 400),
+                getRandomArbitrary(-400, 400),
+                getRandomArbitrary(-400, 400));
 
             self.scene.add(self.spheres[self.spheresNb]);
 
@@ -42,7 +42,7 @@ var Webgl = (function() {
             if(self.spheresNb >= self.spheresLimit) {
                 clearInterval(self.interval);
             }
-        }, 100);
+        }, 700);
     };
 
 

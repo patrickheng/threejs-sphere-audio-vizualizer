@@ -2,37 +2,15 @@ var Sphere = (function(){
 
     var ani = 0;
 
-    function Sphere(type){
+    function Sphere(type, material){
         THREE.Object3D.call(this);
 
 		var color = 0x3facc8;
 		this.type = type;
-
-		switch(this.type) {
-			case 'bass' :
-				color = 0x2ecc71;
-				break;
-			case 'medium' :
-				color = 0xe67e22;
-				break;
-			case 'treble' :
-				color = 0x3facc3;
-				break;
-		}
+		var sphereGeometry = new THREE.SphereGeometry(0);
 
 
-        var sphereGeometry = new THREE.SphereGeometry(0);
-
-        var sphereMaterialDashed = new THREE.LineDashedMaterial({
-            color: color,
-            dashSize: 1,
-            scale: 1,
-            gapSize: 1.5,
-            lineWidth: 10
-        });
-
-
-        this.mesh = new THREE.Line(this.geo2line(sphereGeometry), sphereMaterialDashed, THREE.LinePieces);
+        this.mesh = new THREE.Line(this.geo2line(sphereGeometry), sphereMaterial[this.type], THREE.LinePieces);
         this.add(this.mesh);
     }
 
@@ -47,15 +25,12 @@ var Sphere = (function(){
 		switch(this.type) {
 			case 'bass' :
 				audioData = audioDataFullTab[0];
-				coeff = 0.01;
 				break;
 			case 'medium' :
 				audioData = audioDataFullTab[1];
-				coeff = 0.010;
 				break;
 			case 'treble' :
 				audioData = audioDataFullTab[2];
-				coeff = 0.05;
 				break;
 		}
 
@@ -69,9 +44,9 @@ var Sphere = (function(){
         this.mesh.position.y += randomPositionValue;
         this.mesh.position.z += randomPositionValue;
 		
-        this.mesh.scale.x  = audioData*coeff;
-        this.mesh.scale.y  = audioData*coeff;
-        this.mesh.scale.z  = audioData*coeff;
+        this.mesh.scale.x  = audioData*guiConfig.sphereSize[this.type];
+        this.mesh.scale.y  = audioData*guiConfig.sphereSize[this.type];
+        this.mesh.scale.z  = audioData*guiConfig.sphereSize[this.type];
 
 
         if ((ani < 1) && (ani > 0)) {

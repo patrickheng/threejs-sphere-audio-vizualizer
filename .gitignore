@@ -6,3 +6,8 @@ node_modules
 assets/lib
 .idea
 src/audio/audio.mp3
+src/audio/ueno.mp3
+src/audio/thelook.mp3
+src/audio/summer.mp3
+src/audio/litzomania.mp3
+src/audio/AnnaGraceman-Words-remix.mp3
