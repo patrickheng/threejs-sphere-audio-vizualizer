@@ -1,7 +1,12 @@
 # Three.js - Audio experiement
 My first try with three js. Shapes are generated and pulsate to the beat an music file.
 
+
 Demo available [here](http://lab.hengpatrick.fr/three-js-audio-experiment/).
+
+
+![Preview](http://lab.hengpatrick.fr/three-js-audio-experiment/preview.png)
+
 
 
 #### Technologies :
